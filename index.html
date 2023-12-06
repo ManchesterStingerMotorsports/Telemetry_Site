@@ -8,6 +8,26 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="myPlot" style="width: 100%; height: 100vh"></div>
+    <div
+      id="selection_pane"
+      style="
+        float: right;
+        width: 10%;
+        height: 100vh;
+        background-color: aliceblue;
+      "
+      onclick="console.log('here')"
+    >
+      <h3>Select sensor readings to plot:</h3>
+      <form id="trace_toggles"></form>
+    </div>
+    <div id="myPlot" style="width: 90%; height: 90vh"></div>
+    <button
+      id="scroll_enable_button"
+      onclick="toggle_scroll()"
+      style="width: 90%; height: 10vh"
+    >
+      Pause Scrolling
+    </button>
   </body>
 </html>

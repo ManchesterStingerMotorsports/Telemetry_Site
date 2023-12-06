@@ -8,4 +8,4 @@ The site will have a timer function that triggers a ajax request for the most re
 
 # Current state
 
-Two pages showing different trig functions that update continously
+Working on toggling traces
