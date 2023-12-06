@@ -11,7 +11,7 @@ def generate_random_value():
     y = x / 1000
     return y
 
-def push_value(client, sensor):
+def push_value(client: InfluxDBClient, sensor):
     write_api = client.write_api(write_options=SYNCHRONOUS)
     org = "demo_org"
     bucket = "haltech_data"
