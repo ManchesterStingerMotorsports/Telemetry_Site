@@ -29,15 +29,30 @@ for table in result:
 ## Done List
 *(CAN IDs)*
 
+- Ox364
 - Ox368
 
 ## Groups
 
+### Average Injection Time (0x364)
+
+- Injection Stage 1
+- Injection Stage 2
+- Injection Stage 3
+- Injection Stage 4
+
+**Formula**
+```
+y = x / 1000
+``` 
+*Unit: ms (time)*
+
+**Line Protocol**
+```
+avg_injection_time, injection_stage=1, duration=0.0
+```
+
 ###  Wideband Sensors (0x368)
-
-Added to DB: [x]
-
-Added Generator: [x]
 
 - Wideband Sensor 1
 - Wideband Sensor 2

@@ -10,7 +10,7 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-import generators.ox368 as gen_0x368
+import generators.ox364 as gen_0x364
 
-print(gen_0x368.push_value(client, 1))
-print(gen_0x368.pull_value(client, 1))
+print(gen_0x364.push_value(client, 1))
+print(gen_0x364.pull_value(client, 1))
