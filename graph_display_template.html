@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph Display Template</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="graph_display_div_0">
+      <div id="graph_div_0" style="width: 80%; height: 30vh; float: left"></div>
+      <div
+        id="selection_pane_div_0"
+        class="selection_pane_div"
+        style="width: 20%; height: 30vh; float: right"
+      >
+        <button onclick="toggle_scroll()" style="width: auto; height: 10%">
+          Toggle Scrolling
+        </button>
+      </div>
+    </div>
+    <script>
+      var scroll_enabled = true;
+      var graph_range_limit = 30;
+      var last_x = 0;
+      const graph_div_id = "graph_div_0";
+      const selection_pane_id = "selection_pane_div_0";
+      const layout = {
+        plot_bgcolor: "black",
+        paper_bgcolor: "black",
+        font: {
+          family: "Arial",
+          size: 18,
+          color: "#FFFFFF",
+        },
+        margin: 0,
+      };
+
+      const configs = {};
+
+      window.onload = function () {
+        var zeros = [];
+        for (i = 0; i < graph_range_limit; i += 0.1) {
+          zeros.push(0);
+        }
+        last_x = graph_range_limit;
+        var empty_data = [{ x: zeros, y: zeros, mode: "lines" }];
+
+        Plotly.newPlot(graph_div_id, empty_data, layout);
+
+        setInterval(updatePlots, 100);
+        //updatePlots();
+      };
+
+      function updatePlots() {
+        last_x += 0.1;
+
+        var new_data = {
+          y: [[randint(3)]],
+          x: [[last_x]],
+        };
+
+        Plotly.extendTraces(graph_div_id, new_data, [0]);
+
+        if (last_x > graph_range_limit && scroll_enabled) {
+          Plotly.update(
+            graph_div_id,
+            {},
+            { xaxis: { range: [last_x - graph_range_limit, last_x] } }
+          );
+        }
+      }
+
+      function toggle_scroll() {
+        scroll_enabled = !scroll_enabled;
+      }
+
+      function randint(maxval) {
+        return Math.floor(Math.random() * maxval);
+      }
+    </script>
+  </body>
+</html>
