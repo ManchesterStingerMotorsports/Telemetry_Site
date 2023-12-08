@@ -6,6 +6,7 @@
     <title>Telemetry</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div
@@ -16,18 +17,16 @@
         height: 100vh;
         background-color: aliceblue;
       "
-      onclick="console.log('here')"
     >
       <h3>Select sensor readings to plot:</h3>
       <form id="trace_toggles"></form>
     </div>
-    <div id="myPlot" style="width: 90%; height: 90vh"></div>
-    <button
-      id="scroll_enable_button"
-      onclick="toggle_scroll()"
-      style="width: 90%; height: 10vh"
-    >
-      Pause Scrolling
-    </button>
+
+    <div id="displays">
+
+    </div>
+    
+    
+    
   </body>
 </html>
