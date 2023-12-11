@@ -31,6 +31,7 @@ for table in result:
 
 - Ox364
 - Ox368
+- 0x36A
 
 ## Groups
 
@@ -70,3 +71,18 @@ y = x / 1000
 wideband_sensors, sensor=1, lambda=0.0
 ```
 
+###  Knock Level (0x36A)
+
+- Knock Level 1
+- Knock Level 2
+
+**Formula**
+```
+y = x/100
+``` 
+*Unit: dB (volume)*
+
+**Line Protocol**
+```
+knock_level, level=1, volume=0.0
+```
