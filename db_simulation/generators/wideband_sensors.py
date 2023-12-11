@@ -5,6 +5,8 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 import random
 
 # CAN 0x368: Wideband Sensors (1-4)
+# CAN 0x3EE: Wideband Sensors (5-8)
+# CAN 0x3EF: Wideband Sensors (9-12)
 
 def generate_random_value():
     x = random.uniform(1000, 2000)

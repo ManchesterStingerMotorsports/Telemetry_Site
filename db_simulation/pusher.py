@@ -10,7 +10,7 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-import generators.egt_sensors as egt_sensors
+import generators.wideband_sensors as egt_sensors
 
 for i in range(1, 13):
     print(egt_sensors.push_value(client, i))

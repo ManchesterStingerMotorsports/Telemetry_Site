@@ -35,6 +35,8 @@ for table in result:
 - 0x373
 - Ox374
 - Ox375
+- 0x3EE
+- 0x3EF
 
 ## Groups
 
@@ -56,12 +58,11 @@ y = x / 1000
 avg_injection_time, injection_stage=1, duration=0.0
 ```
 
-###  Wideband Sensors (0x368)
+###  Wideband Sensors (0x368, 0x3EE, 0x3EF)
 
-- Wideband Sensor 1
-- Wideband Sensor 2
-- Wideband Sensor 3
-- Wideband Sensor 4
+- Sensors 1-4: 0x368
+- Sensors 5-8: 0x3EE
+- Sensors 9-12: 0x3EF
 
 **Formula**
 ```
