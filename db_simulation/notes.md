@@ -32,6 +32,9 @@ for table in result:
 - Ox364
 - Ox368
 - 0x36A
+- 0x373
+- Ox374
+- Ox375
 
 ## Groups
 
@@ -85,4 +88,19 @@ y = x/100
 **Line Protocol**
 ```
 knock_level, level=1, volume=0.0
+```
+
+### EGT Sensors 1-12 (0x373 -> 0x375)
+
+- EGT Sensors 1 to 12
+
+**Formula**
+```
+y = x/10
+```
+*Unit: K (Kelvin - Temprature)*
+
+**Line Protocol**
+```
+egt_sensors, sensor=1, temp=0.0
 ```

@@ -10,7 +10,8 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-import generators.ox36a as gen_0x36a
+import generators.egt_sensors as egt_sensors
 
-print(gen_0x36a.push_value(client, 2))
-print(gen_0x36a.pull_value(client, 2))
+for i in range(1, 13):
+    print(egt_sensors.push_value(client, i))
+    print(egt_sensors.pull_value(client, i))  
