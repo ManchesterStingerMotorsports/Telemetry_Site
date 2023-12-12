@@ -32,6 +32,7 @@ for table in result:
 - Ox364
 - Ox368
 - 0x36A
+- 0x36C
 - 0x373
 - Ox374
 - Ox375
@@ -104,4 +105,25 @@ y = x/10
 **Line Protocol**
 ```
 egt_sensors, sensor=1, temp=0.0
+```
+
+### Wheel Speed Sensors (0x36C)
+
+- Front Right
+- Front Left
+- Rear Right
+- Rear Left
+
+*(front_right) etc.*
+
+**Formula**
+```
+y = x/10
+```
+
+*Unit: km/h*
+
+**Line Protocol**
+```
+wheel_speed, corner="front_right", speed=0.0
 ```

@@ -10,8 +10,10 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-import generators.wideband_sensors as egt_sensors
+import generators.wheel_speed as egt_sensors
 
-for i in range(1, 13):
-    print(egt_sensors.push_value(client, i))
-    print(egt_sensors.pull_value(client, i))  
+corners = ["front_left", "front_right", "rear_left", "rear_right"]
+
+for corner in corners:
+    print(egt_sensors.push_value(client, corner))
+    print(egt_sensors.pull_value(client, corner))
