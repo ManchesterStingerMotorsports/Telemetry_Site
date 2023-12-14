@@ -10,7 +10,7 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-import generators.wheel_speed as egt_sensors
+import operators.wheel_speed as egt_sensors
 
 corners = ["front_left", "front_right", "rear_left", "rear_right"]
 
