@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <p>Telemetry goes here</p>
+      <button type='button' className='btn btn-primary'>Telemetry goes here</button>
     </>
   )
 }
