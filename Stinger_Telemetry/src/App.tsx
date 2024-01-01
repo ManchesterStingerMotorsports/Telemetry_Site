@@ -1,11 +1,11 @@
 import './App.css'
-
+import Telemetry from './Telemetry'
 function App() {
   
 
   return (
     <>
-      <button type='button' className='btn btn-primary'>Telemetry goes here</button>
+      <Telemetry/>
     </>
   )
 }

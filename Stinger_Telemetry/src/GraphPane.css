@@ -1,0 +1,11 @@
+.graphPane {
+  background-color: rgb(75, 75, 75);
+  border: 0.1rem solid black;
+  box-shadow: 0.1rem 0.1rem 0.1rem black;
+  margin: 1%;
+}
+
+.sidePanel {
+  box-shadow: 0.1rem 0 0.5rem black;
+  background-color: #660099;
+}
