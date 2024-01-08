@@ -2,6 +2,7 @@ import { useState } from 'react';
 import GraphPane from './GraphPane';
 const Telemetry = () => {
   const [panelCount, setPanelCount] = useState(1);
+  const sensors = ['rpm', 'speed', 'battery voltage', 'oxygen', 'engine temp'];
 
   return (
     <>
@@ -30,7 +31,7 @@ const Telemetry = () => {
         </button>
       </div>
       {[...Array(panelCount).keys()].map((index) => (
-        <GraphPane key={index} />
+        <GraphPane key={index} sensors={sensors} />
       ))}
     </>
   );
