@@ -29,8 +29,8 @@ const Telemetry = () => {
           Add+
         </button>
       </div>
-      {[...Array(panelCount).keys()].map(() => (
-        <GraphPane />
+      {[...Array(panelCount).keys()].map((index) => (
+        <GraphPane key={index} />
       ))}
     </>
   );

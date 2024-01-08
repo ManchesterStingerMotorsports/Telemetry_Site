@@ -2,30 +2,45 @@ import { useState, useEffect } from 'react';
 import './GraphPane.css';
 import Plot from 'react-plotly.js';
 const GraphPane = () => {
-  const [current_x, setCurrent_x] = useState(6);
+  const x_axis_range = 30;
 
   const [data, setData] = useState([
-    { name: 'rpm', x: [1, 2, 3, 4, 5, 6], y: [2, 4, 5, 8, 10, 12] },
-    { name: 'temp', x: [1, 2, 3, 4, 5, 6], y: [21, 34, 35, 38, 20, 32] },
+    {
+      x: [0],
+      y: [0],
+      name: 'rpm',
+    },
+    { x: [0], y: [0], name: 'temp' },
+    { x: [0], y: [0], name: 'speed' },
+    { x: [0], y: [0], name: 'voltage' },
   ]);
 
-  const updateData = (): void => {
-    setCurrent_x(current_x + 0.1);
-    const new_data = [...data];
-    new_data.forEach((trace) => {
-      trace.x.push(current_x);
-      trace.y.push(random_integer(20));
-    });
-    setData(new_data);
-    console.log(new_data);
-  };
   function random_integer(maximum_value: number): number {
     return Math.floor(Math.random() * maximum_value);
   }
 
   useEffect(() => {
-    setInterval(updateData, 100);
-  }, []);
+    const interval = setInterval(() => {
+      const new_data: {
+        x: number[];
+        y: number[];
+        name: string;
+      }[] = [];
+      data.forEach((trace) => {
+        const new_x = [...trace.x];
+        new_x.push(new_x[new_x.length - 1] + 0.5);
+        const new_y = [...trace.y];
+        new_y.push(random_integer(10));
+        new_data.push({ x: new_x, y: new_y, name: trace.name });
+      });
+
+      setData(new_data);
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [data]);
 
   return (
     <div className='container-fluid graphPane'>
@@ -33,26 +48,25 @@ const GraphPane = () => {
         <div className='col-10'>
           <Plot
             divId='plotOne'
-            data={[
-              {
-                x: data[0].x,
-                y: data[0].y,
-                type: 'scatter',
-                name: data[0].name,
+            data={data}
+            layout={{
+              plot_bgcolor: 'black',
+              paper_bgcolor: '#4B4B4B',
+              font: { color: 'white' },
+              height: 250,
+              margin: { t: 0, b: 20, l: 20, r: 0, pad: 0 },
+              xaxis: {
+                range: [
+                  data[0].x[data[0].x.length - 1] - x_axis_range,
+                  data[0].x[data[0].x.length - 1],
+                ],
               },
-              {
-                x: data[1].x,
-                y: data[1].y,
-                type: 'scatter',
-                name: data[1].name,
-              },
-            ]}
-            layout={{}}
-            config={{ responsive: true }}
+            }}
+            config={{}}
           />
         </div>
         <div className='col-2 sidePanel'>
-          <button onClick={updateData}>Click</button>
+          <button>Click</button>
         </div>
       </div>
     </div>
