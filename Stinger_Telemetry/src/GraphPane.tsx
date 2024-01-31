@@ -121,7 +121,7 @@ const GraphPane = ({ sensors }: Props) => {
             </button>
           </div>
           {traces.map((trace, index) => (
-            <>
+            <div>
               <label htmlFor='cars'>Sensor: </label>
               <select
                 onChange={(e) => handleSelectChange(e, index)}
@@ -136,7 +136,7 @@ const GraphPane = ({ sensors }: Props) => {
                   </option>
                 ))}
               </select>
-            </>
+            </div>
           ))}
         </div>
       </div>
