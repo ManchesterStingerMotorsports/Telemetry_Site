@@ -1,0 +1,14 @@
+position,corrected_position,name,python_type,c_type,connected,can_id,can_position,conversion,conversion_str
+8,2,EngineMaxRpm,float,f32,1,0x477,0-1,,
+16,4,CurrentEngineRpm,float,f32,1,0x360,0-1,,
+56,14,Yaw,float,f32,1,0x474,6-7,,
+60,15,Pitch,float,f32,1,0x474,2-3,,
+64,16,Roll,float,f32,1,0x474,4-5,,
+244,61,Speed,float,f32,1,0x370,0-1,3.6,MPS TO KPH
+256,64,TireTempFrontLeft,float,f32,1,0x6F1,0-1,,
+260,65,TireTempFrontRight,float,f32,1,0x6F1,2-3,,
+264,66,TireTempRearLeft,float,f32,1,0x6F1,4-5,,
+268,67,TireTempRearRight,float,f32,1,0x6F1,6-7,,
+276,69,Fuel,float,f32,1,0x3E2,0-1,100,Convert Dec to %
+303,77,Accel,int,u8,1,0x471,2-3,0.392156862745098,/255 to %
+307,81,Gear,int,u8,1,0x470,1,,
