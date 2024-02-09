@@ -14,5 +14,3 @@ def load_key_list():
 dataframe = load_dataframe()
 key_list  = load_key_list()
 base_time = dataframe.iloc[:, 1].min()
-
-print(base_time)

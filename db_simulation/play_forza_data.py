@@ -2,6 +2,7 @@ import forza_sim_data.data_parser as fsdp
 import pandas as pd
 import std_writer
 import time
+from tqdm import tqdm
 
 from datetime import datetime
 import os
@@ -15,9 +16,9 @@ bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
-cache_time = fsdp.base_time
+# cache_time = fsdp.base_time
 
-for _, data in fsdp.dataframe.iterrows():
+for _, data in tqdm(fsdp.dataframe.iterrows(), total=fsdp.dataframe.shape[0]):
     # start = time.time()
     for _, keyblock in fsdp.key_list.iterrows():
         
