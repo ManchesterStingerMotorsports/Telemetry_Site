@@ -10,7 +10,7 @@ def get_cpu_temperature():
         return temp_in_celsius
     
     except FileNotFoundError:
-        return None
+        return int(0)
     
 
 # # You can generate a Token from the "Tokens Tab" in the UI
