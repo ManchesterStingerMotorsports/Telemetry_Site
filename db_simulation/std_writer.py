@@ -3,6 +3,7 @@ import os
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 import random
+import bucket as bk
 
 # STANDARDISED: Pass CAN_ID and Message Position instead.
 # Using different bucket! haltech_data_std
@@ -15,7 +16,7 @@ def generate_random_value():
 
 def push_value(client: InfluxDBClient, can_id, position, value):
     write_api = client.write_api(write_options=SYNCHRONOUS)
-    org = "demo_org"
+    org = bk.org
     bucket = "haltech_data_std"
     
     point = Point(can_id) \

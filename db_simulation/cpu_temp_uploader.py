@@ -1,5 +1,6 @@
 from influxdb_client import InfluxDBClient
 import std_writer
+import token_book
 
 def get_cpu_temperature():
     try:
@@ -14,8 +15,8 @@ def get_cpu_temperature():
     
 
 # # You can generate a Token from the "Tokens Tab" in the UI
-token = "SgoCld08-qh4q4pzQ9pRSxWsee62FDmBQe43uvPSR_LmbtdmM4g9p7NNhuQFY8gryc_QIR7SvyA-hLggLDQ2Rg=="
-org = "demo_org"
+token = token_book.token
+org = token_book.org
 bucket = "haltech_data"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
