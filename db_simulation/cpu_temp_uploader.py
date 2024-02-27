@@ -1,6 +1,6 @@
 from influxdb_client import InfluxDBClient
 import std_writer
-import token_book
+import bucket as token_book
 
 def get_cpu_temperature():
     try:
