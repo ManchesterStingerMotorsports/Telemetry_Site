@@ -1,0 +1,12 @@
+certifi==2023.11.17
+influxdb-client==1.39.0
+numpy==1.26.2
+pandas==2.1.4
+python-dateutil==2.8.2
+pytz==2023.3.post1
+reactivex==4.0.4
+six==1.16.0
+tqdm==4.66.1
+typing_extensions==4.8.0
+tzdata==2023.3
+urllib3==2.1.0
