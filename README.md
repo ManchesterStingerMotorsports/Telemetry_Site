@@ -20,26 +20,7 @@ python play_forza_data.py
 
 **Note:** In order to run InfluxDB, a **64-bit** OS must be installed *(ideally, either Ubuntu64 or Raspbian64).*
 
-### Installing TelemetrySite
-
-1. **Clone Repo** and switch to the right branch.
-```bash
-git clone https://github.com/ManchesterStingerMotorsports/Telemetry_Site.git
-git checkout influx_generators
-```
-
-2. **Create Virtual Environment** to install packages into, and enter it.
-```bash
-python3 -m venv ./.venv
-source .venv/bin/activate
-```
-
-3. **Install Requirements.**
-```bash
-pip install -r requirements.txt
-```
-
-**Install Complete ✅**
+If it is not already, install InfluxDB **first**.
 
 ### Installing InfluxDB
 
@@ -72,7 +53,30 @@ sudo service influxdb start
 - Click on the **'Get Token'** category *(on the left)*.
 - Copy the token value and save this in the txt file aswell.
 
-5. **Add Credentials to TelemetrySite**
+**InfluxDB configuration Complete ✅**
+
+### Installing TelemetrySite
+
+You can use the **INSTALLER.sh** script included to do the installation; alternatively, the steps to do it manually are below.
+
+1. **Clone Repo** and switch to the right branch.
+```bash
+git clone https://github.com/ManchesterStingerMotorsports/Telemetry_Site.git
+git checkout influx_generators
+```
+
+2. **Create Virtual Environment** to install packages into, and enter it.
+```bash
+python3 -m venv ./.venv
+source .venv/bin/activate
+```
+
+3. **Install Requirements.**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Add Credentials to TelemetrySite**
 
 - Navigate to the **db_simulation** folder, and create a new file called **bucket.py**:
 
@@ -89,4 +93,5 @@ token = "TOKEN NAME"
 org = "ORG NAME"
 ```
 
-**InfluxDB configuration Complete ✅**
+**Install Complete ✅**
+
